@@ -2,14 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-// import Header from "./assets/header/header"
+import Navigasi from "../src/assets/component/Component";
 import * as serviceWorker from "./serviceWorker";
 
-function helloWorld() {
-  return <p> hello functional </p>;
+const HelloWorld = () => {
+  return <p>Hello world</p>;
+};
+class StatefullComponent extends React.Component {
+  render() {
+    return <h1>hello react</h1>;
+  }
 }
 
-ReactDOM.render(<helloWorld />, document.getElementById("root"));
+ReactDOM.render(<HelloWorld />, document.getElementById("root"));
+ReactDOM.render(<StatefullComponent />, document.getElementById("state"));
+ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<Navigasi />, document.getElementById("nav"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

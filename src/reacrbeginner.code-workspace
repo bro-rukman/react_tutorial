@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../my-js"
+		},
+		{
+			"path": "../../../../convert"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "website_portfolio"
+	}
+}

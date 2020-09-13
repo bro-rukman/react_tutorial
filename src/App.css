@@ -37,14 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.card {
-  width: 200px;
-  height: 100px;
-  border: 1px solid green;
-  background-color: blue;
-}
-
-.nama {
-  font-weight: bold;
-}

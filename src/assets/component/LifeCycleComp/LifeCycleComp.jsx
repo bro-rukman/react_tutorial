@@ -16,9 +16,9 @@ class LifeCycleComp extends Component {
     console.log("componentDidMount running");
     setTimeout(() => {
       this.setState({
-        count: +1,
+        count: 2,
       });
-    }, 3000);
+    }, 1000);
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.group("shouldComponentUpdate running");

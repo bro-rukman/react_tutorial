@@ -12,9 +12,7 @@ const YoutubeComp = (props) => {
         />
         <p className="time">{props.waktu}</p>
       </div>
-      <a href="">
         <p className="title">{props.title}</p>
-      </a>
       <p className="desk">desk here</p>
     </div>
   );

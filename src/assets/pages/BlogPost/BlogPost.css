@@ -41,16 +41,22 @@
     color: #3d4a6e;
     margin-bottom: 16px;
 }
+.content p.title:hover{
+    cursor: pointer;
+    color: black;
+}
 
 .content p.desc {
     margin: 0px;
     font-size: 16px;
     color: #4a4a4a;
 }
-
+.rowbtn{
+    margin-top: 5px;
+}
 .remove {
-    height: 40px;
-    width: 190px;
+    height: 35px;
+    width: 100px;
     background-color: red;
     border-radius: 5px;
     color: #fff;
@@ -58,6 +64,19 @@
     margin-top: 5px;
     outline: none;
     border: none;
+}
+.update{
+    height: 35px;
+    width: 100px;
+    background-color:blue;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 5px;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
 }
 
 .remove:hover {

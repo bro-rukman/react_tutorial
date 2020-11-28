@@ -46,10 +46,9 @@ class LifeCycleComp extends Component {
     return (
       <Fragment>
         <p>LifeCycleComp</p>
-        <div className="cycle">hello</div>
         <br />
         <button className="tapping" onClick={this.changeCount}>
-          Get Started {this.state.count}
+           Lifecycle {this.state.count}
         </button>
       </Fragment>
     );

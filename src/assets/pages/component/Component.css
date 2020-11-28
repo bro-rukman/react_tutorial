@@ -3,6 +3,8 @@
     height: 150px;
     border: 1px solid green;
     background-color: blue;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .nama {

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Navigasi from "../src/assets/component/Component";
-import YoutubeComp from "./assets/component/YoutubeComp/YoutubeComp";
+// import Navigasi from "../src/assets/component/Component";
+// import YoutubeComp from "./assets/component/YoutubeComp/YoutubeComp";
 import Home from "../src/assets/Home/Home";
-import LifeCycleComp from "../src/assets/component/LifeCycleComp/LifeCycleComp";
+// import LifeCycleComp from "../src/assets/component/LifeCycleComp/LifeCycleComp";
 import * as serviceWorker from "./serviceWorker";
 
 const HelloWorld = () => {

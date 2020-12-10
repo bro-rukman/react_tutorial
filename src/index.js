@@ -1,26 +1,48 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import Navigasi from "../src/assets/component/Component";
-// import YoutubeComp from "./assets/component/YoutubeComp/YoutubeComp";
 import Home from "../src/assets/Home/Home";
-// import LifeCycleComp from "../src/assets/component/LifeCycleComp/LifeCycleComp";
 import * as serviceWorker from "./serviceWorker";
+import {createStore} from 'redux'
+import {Provider} from 'react-redux';
 
-const HelloWorld = () => {
-  return <p> Hello world </p>;
-};
-class StatefullComponent extends React.Component {
-  render() {
-    return <h1> hello react </h1>;
-  }
+// const createStore= redux.createStore;
+const globalState={
+    totalOrder:0,
 }
 
-// ReactDOM.render(<HelloWorld />, document.getElementById("root"));
-// ReactDOM.render(<StatefullComponent />, document.getElementById("state"));
-// ReactDOM.render(<Navigasi />, document.getElementById("nav"));
-// ReactDOM.render(<YoutubeComp />, document.getElementById("youtube"));
-ReactDOM.render(<Home />, document.getElementById("home"));
+// Reducer
+const rootReducer=(state=globalState,action)=>{
+    switch (action.type) {
+        case 'PLUS_ORDER':
+            return{
+                ...state,
+                totalOrder:state.totalOrder+1,
+            }
+            break;
+        case 'MINUS_ORDER':
+            let totalOrder=0;
+            if (state.totalOrder>0) {
+                totalOrder=state.totalOrder-1;
+            }
+            return{
+                ...state,
+                totalOrder: totalOrder,
+            }
+            break;
+        default:
+            break;
+    }
+    return state;
+}
+// Store
+const storeRedux= createStore(rootReducer);
+// Dispatching
+// store.dispatch({type:" "})
+// Subscribe
+
+// Provider hanya pembungkus wrapper seperti fragment
+ReactDOM.render(<Provider store={storeRedux}><Home /></Provider>, document.getElementById("home"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

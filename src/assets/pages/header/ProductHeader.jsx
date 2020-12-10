@@ -15,7 +15,7 @@ class ProductHeader extends Component {
           />
           <p className="product-title">Daging ayam</p>
           <p className="product-price">Rp 30.000</p>
-          <Counter onCounterChange={(value)=>this.props.onCounterChange(value)}/>
+          <Counter/>
           <p className="total-harga"></p>
         </div>
       </div>

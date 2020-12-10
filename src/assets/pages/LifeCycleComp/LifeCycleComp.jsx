@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 import "./LifeCycleComp.css";
 
 class LifeCycleComp extends Component {
@@ -50,9 +51,17 @@ class LifeCycleComp extends Component {
         <button className="tapping" onClick={this.changeCount}>
            Lifecycle {this.state.count}
         </button>
+        <hr/>
+    <p>Total order adalah : {this.props.order}</p>
       </Fragment>
     );
   }
 }
+const totalOrder=(state)=>{
+  return{
+    ...state,
+  order: state.totalOrder,
+  }
+}
 
-export default LifeCycleComp;
+export default connect(totalOrder)(LifeCycleComp);

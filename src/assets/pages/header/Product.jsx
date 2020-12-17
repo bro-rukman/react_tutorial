@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import ProductHeader from "./ProductHeader";
+import { GlobalConsumer } from "../../../context/context";
 // import {connect} from 'react-redux'
 
 class Product extends Component {
@@ -20,7 +21,7 @@ class Product extends Component {
       <Fragment>
         <div className="header">
           <div className="logo">
-              <div className="count">Jumlah : {this.props.order}</div>
+              <div className="count">Jumlah : {value.state.totalOrder}</div>
           </div>
         </div>
         <ProductHeader/>
@@ -28,9 +29,10 @@ class Product extends Component {
     );
   }
 }
-const mapStateToProps=(state)=>{
-  return{
-    order:state.totalOrder
-  }
-}
-export default connect(mapStateToProps)(Product);
+// const mapStateToProps=(state)=>{
+//   return{
+//     order:state.totalOrder
+//   }
+// }
+// export default connect(mapStateToProps)(Product);
+export default Product;

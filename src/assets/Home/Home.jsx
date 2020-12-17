@@ -1,6 +1,6 @@
 // Libraries
-import React, { Component, Fragment } from "react";
-import {BrowserRouter, Route, Link} from "react-router-dom";
+import React, { Component, Fragment, createContext } from "react";
+import { BrowserRouter, Route, Link} from "react-router-dom";
 // Styling
 import "../Home/Home.css";
 // Pages
@@ -10,14 +10,17 @@ import BlogPost from "../pages/BlogPost/BlogPost";
 import LifeCycleComp from "../pages/LifeCycleComp/LifeCycleComp";
 import ComponentFull from "../pages/component/Component";
 import DetailPost from "../pages/BlogPost/DetailPost/DetailPost";
+import { act } from "react-dom/test-utils";
+import GlobalProvider from '../../context/context';
+
+
+
 
 class Home extends Component {
-  state = {
-    showComp: true,
-  };
   render() {
     return (
       <BrowserRouter>
+      <Fragment>
       <div>
         <h2>React Router Dom</h2>
        <ul className="space"> <li><Link to="/">Homepage</Link></li>
@@ -29,17 +32,7 @@ class Home extends Component {
         </ul>
         <br/><br/><hr/>
        </div>
-      {/* <div className="row">
-        <YoutubeComp title="gambar1" waktu="4.14" />
-        <YoutubeComp waktu="12" />
-        <YoutubeComp waktu="12" />
-        <ComponentFull/>
-        <p>Counter</p>
-        <Product />
-        <LifeCycleComp />
-        <BlogPost />
-        </div> */}
-        <Fragment>
+        
           <switch>
           <Route path="/" exact component={BlogPost}/>
           <Route path="/card" component={ComponentFull}/>
@@ -48,11 +41,10 @@ class Home extends Component {
           <Route path="/product" component={Product}/>
           <Route path="/detail/:postID" component={DetailPost}/>
           </switch>
-        
         </Fragment>
       </BrowserRouter>
     );
   }
 }
 
-export default Home;
+export default GlobalProvider(Home);

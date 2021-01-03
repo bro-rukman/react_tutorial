@@ -13,13 +13,35 @@ import DetailPost from "../pages/BlogPost/DetailPost/DetailPost";
 import { act } from "react-dom/test-utils";
 import GlobalProvider from '../../context/context';
 
-
+export const RootContext=createContext();
+const Provider=RootContext.Provider;
 
 
 class Home extends Component {
+  state={
+    totalOrder : 0,
+  }
+  dispatch=(action)=>{
+    if (action.type==='PLUS_ORDER') {
+      return this.setState({
+        totalOrder:this.state.totalOrder+1
+        })
+    }
+    if (action.type==='MINUS_ORDER') {
+      return this.setState({
+        totalOrder:this.state.totalOrder-1
+        })
+    }
+  }
   render() {
     return (
       <BrowserRouter>
+      <Provider value={
+        {
+          state: this.state,
+          dispatch : this.dispatch,
+        }
+      }>
       <Fragment>
       <div>
         <h2>React Router Dom</h2>
@@ -32,19 +54,17 @@ class Home extends Component {
         </ul>
         <br/><br/><hr/>
        </div>
-        
-          <switch>
           <Route path="/" exact component={BlogPost}/>
           <Route path="/card" component={ComponentFull}/>
           <Route path="/lifecycle" component={LifeCycleComp}/>
           <Route path="/youtube" component={YoutubeComp}/>
           <Route path="/product" component={Product}/>
           <Route path="/detail/:postID" component={DetailPost}/>
-          </switch>
         </Fragment>
+        </Provider>
       </BrowserRouter>
     );
   }
 }
 
-export default GlobalProvider(Home);
+export default Home;

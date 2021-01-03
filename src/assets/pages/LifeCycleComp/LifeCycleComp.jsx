@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import "./LifeCycleComp.css";
-import {GlobalConsumer} from "../header/Product";
+import {GlobalConsumer} from "../../../context/context";
 
 class LifeCycleComp extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class LifeCycleComp extends Component {
                   Lifecycle {this.state.count}
                 </button>
                 <hr/>
-                {/* <p>Total order adalah : {value.state.totalOrder}</p> */}
+                <p>Total order adalah : {0}</p>
               </Fragment>
     );
   }

@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 import { GlobalConsumer } from '../../../context/context';
-import ActionType from '../../../redux/reducer/globalActionType';
+import {RootContext} from '../../Home/Home'
+// import ActionType from '../../../redux/reducer/globalActionType';
 
 class Counter extends Component{
     // state = {
@@ -33,8 +34,12 @@ class Counter extends Component{
       //   }
       // };
     render(){
-      console.log(this);
         return(
+          <RootContext.Consumer>
+            {
+              value=>{
+                console.log('value :', value);
+                return(
                 <div className="counter">
                 <button className="minus" onClick={()=>value.dispatch({type:'MINUS_ORDER'})}>
                   -
@@ -44,6 +49,11 @@ class Counter extends Component{
                   +
                 </button>
                 </div>
+                )
+              }
+            }
+                
+          </RootContext.Consumer>
         );
     }
 }

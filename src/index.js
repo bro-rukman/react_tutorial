@@ -16,7 +16,7 @@ import * as serviceWorker from "./serviceWorker";
 
 // Provider hanya pembungkus wrapper seperti fragment
 // ReactDOM.render(<Provider store={storeRedux}><Home /></Provider>, document.getElementById("home"));
-ReactDOM.render(<Home />, document.getElementById("home"));
+ReactDOM.render(<Home />, document.getElementById("home")); 
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

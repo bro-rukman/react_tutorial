@@ -1,11 +1,11 @@
-import React,{ Component, createContext} from 'react';
+import React,{Children, Component, createContext} from 'react';
 const RootContext=createContext();
 // Provider
 const Provider =RootContext.Provider;
 const GlobalProvider =(Children)=>{
     return(
         class Parent extends Component{
-            // 
+            //
         }
     )
 }
@@ -31,7 +31,7 @@ export const GlobalConsumer=(Children)=>{
         }
         
     )
-}
+}   
 
 // class Context extends Component{
 

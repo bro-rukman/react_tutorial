@@ -3,6 +3,7 @@ import React, { Component, Fragment } from "react";
 import ProductHeader from "./ProductHeader";
 import { GlobalConsumer } from "../../../context/context";
 // import {connect} from 'react-redux'
+// import {RootContext} from '../../Home/Home'
 
 class Product extends Component {
   // state = {
@@ -17,15 +18,25 @@ class Product extends Component {
   //   });
   // };
   render() {
+    console.log('this',this);
     return (
-      <Fragment>
-        <div className="header">
-          <div className="logo">
-              <div className="count">Jumlah : {0}</div>
-          </div>
-        </div>
-        <ProductHeader/>
-      </Fragment>
+            <Fragment>
+              <div className="header">
+                <div className="logo">
+                    <div className="count">Jumlah : {this.props.state.totalOrder}</div>
+                </div>
+              </div>
+              <ProductHeader/>
+            </Fragment>
+      // <RootContext.Consumer>
+      //   {
+      //     value=>{
+      //       console.log('valueProduct',value);
+      //       return(
+      //       )
+      //     }
+      //   }
+      // </RootContext.Consumer>
     );
   }
 }
@@ -35,4 +46,4 @@ class Product extends Component {
 //   }
 // }
 // export default connect(mapStateToProps)(Product);
-export default Product;
+export default GlobalConsumer(Product);

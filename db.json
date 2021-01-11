@@ -527,6 +527,18 @@
       "id": 1606350924098,
       "title": "hello",
       "body": "hello body"
+    },
+    {
+      "userId": 1,
+      "id": 1610324353480,
+      "title": "json-server --watch db.json --port 3004",
+      "body": "untuk mereload json-server local"
+    },
+    {
+      "userId": 1,
+      "id": 1610381612828,
+      "title": "getpost",
+      "body": "getpost"
     }
   ],
   "comments": [],

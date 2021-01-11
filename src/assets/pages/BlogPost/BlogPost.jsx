@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import Post from "./Post";
 import "./BlogPost.css";
 import axios from "axios";
+import API from "../../../services";
 
 class BlogPost extends Component {
   state = {
@@ -12,18 +13,26 @@ class BlogPost extends Component {
       title:'',
       body:'',
     },
-    isUpdate:false
+    isUpdate:false,
+    photos : []
   };
   getPostAPI = () => {
-    axios.get(`http://localhost:3004/posts?_sort=id&_order=desc`).then((result) => {
+    API.getNewsBlog().then(result=>{
+        this.setState({
+          hits: result,
+        });
+    })
+    API.getPhotos().then(result=>{
       this.setState({
-        hits: result.data,
-      });
-    });
+        photos:result,
+      })
+    })
+    // axios.get(`http://localhost:3004/posts?_sort=id&_order=desc`).then((result) => {
+    // });
   };
   postDataToAPI=()=>{
     axios.post(`http://localhost:3004/posts`, this.state.formBlogPost).then((res) => {
-      console.log(res);
+      console.log('result',res);
       this.getPostAPI();
       this.setState({
         formBlogPost:{
@@ -103,6 +112,11 @@ class BlogPost extends Component {
           <textarea name="body" id="body" cols="30" rows="10" value={this.state.formBlogPost.body} placeholder="add-blog-content" onChange={this.handleFormChange}></textarea>
           <button className="btn-submit" onClick={this.handleSubmit}>Simpan</button>
         </div>
+        {
+          this.state.photos.map(photos=>{
+            return <p>{photos.title}-{photos.url}</p>
+          })
+        }
         {this.state.hits.map((hits) => {
           return <Post key={hits.id} data={hits} remove={this.handleRemove} update={this.handleUpdate} goDetail={this.handleDetail} />;
         })}

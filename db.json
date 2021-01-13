@@ -470,39 +470,9 @@
     },
     {
       "userId": 9,
-      "id": 82,
-      "title": "laudantium voluptate suscipit sunt enim enim",
-      "body": "ut libero sit aut totam inventore sunt\nporro sint qui sunt molestiae\nconsequatur cupiditate qui iste ducimus adipisci\ndolor enim assumenda soluta laboriosam amet iste delectus hic"
-    },
-    {
-      "userId": 9,
-      "id": 83,
-      "title": "odit et voluptates doloribus alias odio et",
-      "body": "est molestiae facilis quis tempora numquam nihil qui\nvoluptate sapiente consequatur est qui\nnecessitatibus autem aut ipsa aperiam modi dolore numquam\nreprehenderit eius rem quibusdam"
-    },
-    {
-      "userId": 9,
       "id": 85,
       "title": "dolore veritatis porro provident adipisci blanditiis et sunt",
       "body": "similique sed nisi voluptas iusto omnis\nmollitia et quo\nassumenda suscipit officia magnam sint sed tempora\nenim provident pariatur praesentium atque animi amet ratione"
-    },
-    {
-      "userId": 9,
-      "id": 86,
-      "title": "placeat quia et porro iste",
-      "body": "quasi excepturi consequatur iste autem temporibus sed molestiae beatae\net quaerat et esse ut\nvoluptatem occaecati et vel explicabo autem\nasperiores pariatur deserunt optio"
-    },
-    {
-      "userId": 9,
-      "id": 87,
-      "title": "nostrum quis quasi placeat",
-      "body": "eos et molestiae\nnesciunt ut a\ndolores perspiciatis repellendus repellat aliquid\nmagnam sint rem ipsum est"
-    },
-    {
-      "userId": 9,
-      "id": 88,
-      "title": "sapiente omnis fugit eos",
-      "body": "consequatur omnis est praesentium\nducimus non iste\nneque hic deserunt\nvoluptatibus veniam cum et rerum sed"
     },
     {
       "userId": 9,
@@ -517,12 +487,6 @@
       "body": "minus omnis soluta quia\nqui sed adipisci voluptates illum ipsam voluptatem\neligendi officia ut in\neos soluta similique molestias praesentium blanditiis"
     },
     {
-      "userId": 10,
-      "id": 91,
-      "title": "aut amet sed",
-      "body": "libero voluptate eveniet aperiam sed\nsunt placeat suscipit molestias\nsimilique fugit nam natus\nexpedita consequatur consequatur dolores quia eos et placeat"
-    },
-    {
       "userId": 1,
       "id": 1606350924098,
       "title": "hello",
@@ -531,7 +495,7 @@
     {
       "userId": 1,
       "id": 1610324353480,
-      "title": "json-server --watch db.json --port 3004",
+      "title": "json-server --watch db.json --port 3004 2",
       "body": "untuk mereload json-server local"
     },
     {
@@ -539,6 +503,12 @@
       "id": 1610381612828,
       "title": "getpost",
       "body": "getpost"
+    },
+    {
+      "userId": 1,
+      "id": 1610499359348,
+      "title": "hello delete",
+      "body": "Delete news data"
     }
   ],
   "comments": [],

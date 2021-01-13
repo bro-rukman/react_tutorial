@@ -31,8 +31,33 @@ class BlogPost extends Component {
     // });
   };
   postDataToAPI=()=>{
-    axios.post(`http://localhost:3004/posts`, this.state.formBlogPost).then((res) => {
-      console.log('result',res);
+    API.getPostBlog(this.state.formBlogPost).then(result=>{
+      this.setState({
+        formBlogPost:{
+              userId:1,
+              id:1,
+              title:'',
+              body:'',
+            }
+      })
+    })
+    // axios.post(`http://localhost:3004/posts`, this.state.formBlogPost).then((res) => {
+    //   console.log('result',res);
+    //   this.getPostAPI();
+    //   this.setState({
+    //     formBlogPost:{
+    //       userId:1,
+    //       id:1,
+    //       title:'',
+    //       body:'',
+    //     }
+    //   })
+    // },(err)=>{
+    //   console.log("error",err);
+    // })
+  }
+  putDataToAPI=()=>{
+    API.putNewsData(this.state.formBlogPost,this.state.formBlogPost.id).then(result=>{
       this.getPostAPI();
       this.setState({
         formBlogPost:{
@@ -42,30 +67,29 @@ class BlogPost extends Component {
           body:'',
         }
       })
-    },(err)=>{
-      console.log("error",err);
     })
-  }
-  putDataToAPI=()=>{
-    axios.put(`http://localhost:3004/posts/${this.state.formBlogPost.id}`, this.state.formBlogPost).then((res)=>{
-    console.log(res);
-    this.getPostAPI();
-    this.setState({
-      isUpdate:false,
-      formBlogPost:{
-        userId:1,
-        id:1,
-        title:'',
-        body:'',
-      }
-    })
-    })
+    // axios.put(`http://localhost:3004/posts/${this.state.formBlogPost.id}`, this.state.formBlogPost).then((res)=>{
+    // console.log(res);
+    // this.getPostAPI();
+    // this.setState({
+    //   isUpdate:false,
+    //   formBlogPost:{
+    //     userId:1,
+    //     id:1,
+    //     title:'',
+    //     body:'',
+    //   }
+    // })
+    // })
   }
   handleRemove = (data) => {
-    console.log(data); 
-    axios.delete(`http://localhost:3004/posts/${data}`).then((res) => {
+    API.deleteNewsData(data).then(result=>{
       this.getPostAPI();
-    });
+    })
+    // console.log(data); 
+    // axios.delete(`http://localhost:3004/posts/${data}`).then((res) => {
+    //   this.getPostAPI();
+    // });
   };
   handleUpdate = (data) => {
     console.log(data);
@@ -114,7 +138,7 @@ class BlogPost extends Component {
         </div>
         {
           this.state.photos.map(photos=>{
-            return <p>{photos.title}-{photos.url}</p>
+            return <p>{photos.body}-{photos.email}</p>
           })
         }
         {this.state.hits.map((hits) => {

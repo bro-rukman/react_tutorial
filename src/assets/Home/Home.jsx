@@ -10,6 +10,7 @@ import BlogPost from "../pages/BlogPost/BlogPost";
 import LifeCycleComp from "../pages/LifeCycleComp/LifeCycleComp";
 import ComponentFull from "../pages/component/Component";
 import DetailPost from "../pages/BlogPost/DetailPost/DetailPost";
+import Hooks from '../pages/Hooks/Hooks';
 import { act } from "react-dom/test-utils";
 import GlobalProvider from '../../context/context';
 
@@ -37,6 +38,7 @@ class Home extends Component {
             <li><Link to="/lifecycle">Lifecycle</Link></li>
             <li><Link to="/product">Product</Link></li>
             <li><Link to="/detail/:id">DetailPost</Link></li>
+            <li><Link to="/hooks">Hooks</Link></li>
         </ul>
         <br/><br/><hr/>
        </div>
@@ -46,6 +48,7 @@ class Home extends Component {
           <Route path="/youtube" component={YoutubeComp}/>
           <Route path="/product" component={Product}/>
           <Route path="/detail/:postID" component={DetailPost}/>
+          <Route path="/hooks" component={Hooks}/>
         </Fragment>
         {/* </Provider> */}
       </BrowserRouter>

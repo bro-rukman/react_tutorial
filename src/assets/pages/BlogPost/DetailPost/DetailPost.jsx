@@ -23,7 +23,7 @@ class DetailPost extends Component{
         })
     }
 render(){
-    console.log(this.props);
+    console.log('detailpost',this.props);
     return(
         <Fragment>
             <div className="detailPost">

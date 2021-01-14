@@ -488,27 +488,21 @@
     },
     {
       "userId": 1,
-      "id": 1606350924098,
-      "title": "hello",
-      "body": "hello body"
-    },
-    {
-      "userId": 1,
       "id": 1610324353480,
       "title": "json-server --watch db.json --port 3004 2",
       "body": "untuk mereload json-server local"
     },
     {
       "userId": 1,
-      "id": 1610381612828,
-      "title": "getpost",
-      "body": "getpost"
-    },
-    {
-      "userId": 1,
       "id": 1610499359348,
       "title": "hello delete",
       "body": "Delete news data"
+    },
+    {
+      "userId": 1,
+      "id": 1610550580940,
+      "title": "new add",
+      "body": "new add blog"
     }
   ],
   "comments": [],
